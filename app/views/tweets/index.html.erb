@@ -1,0 +1,26 @@
+<div class="contents row" >
+    <% @tweets.each do |tweet| %>
+        <%= simple_format(tweet.text) %>
+        <span class="name"><%= tweet.name %></span>
+      </div>
+  <% end %>
+</div>
+
+    <% @tweets.each do |tweet| %>
+
+      <div class="row">
+        <div class="col s12 m6">
+          <div class="card white">
+            <div class="card-content black-text">
+              <span class="以下本文><%= tweet.title%></span>
+
+            </div>
+            <div class="card-action">
+              <a href="#">This is a link</a>
+              <a href="#">This is a link</a>
+            </div>
+          </div>
+        </div>
+      </div>
+        <% end %>
+
