@@ -9,7 +9,7 @@
             <div class="card-action">
               <%= simple_format(tweet.text) %>
         <span class="name"><%= tweet.name %></span>
-           <%= link_to '詳細', "/tweets/#{tweet.id}", method: :get %>
+           <%= link_to '詳細へ', "/tweets/#{tweet.id}", method: :get %>
            <%= link_to '編集', "/tweets/#{tweet.id}/edit", method: :get %>
            <%= link_to "削除", "/tweets/#{tweet.id}", method: :delete %>
             </div>
