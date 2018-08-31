@@ -33,18 +33,24 @@
   <body>
      <nav>
     <div class="nav-wrapper">
-      <a href="#" class="brand-logo">ブログ</a>
+      <a href="/tweets" class="brand-logo">ブログ(小学校低学年向け教材)</a>
       <ul id="nav-mobile" class="right hide-on-med-and-down">
-        <li><a href="sass.html">ログイン</a></li>
-        <li><a href="badges.html">ログアウト</a></li>
-        <li><a href="collapsible.html">新規登録</a></li>
-      </ul>
-    </div>
-  </nav>
+        <% if user_signed_in? %>
+        <li><a class="post" href="/tweets/new">投稿する</a></li>
+       <li> <%= link_to "ログアウト", destroy_user_session_path, method: :delete %></li>
 
+        <% else %>
+        <li><%= link_to "ログイン", new_user_session_path, class: 'post' %></li>
+        <li><%= link_to "新規登録", new_user_registration_path, class: 'post' %></li>
+      </ul>
+    <% end %>
+     </div>
+  </nav>
+<div class="container">
 
     <%= yield %>
 
+</div>
     <footer>
       <p>
         Copyright PicTweet 2014.

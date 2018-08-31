@@ -1,0 +1,27 @@
+
+    <% if user_signed_in? && current_user.id == @tweet.user_id %>
+
+
+    <div class="row">
+        <div class="col s12 m6">
+          <div class="card white">
+            <div class="card-content black-text">
+</div>
+
+            <div class="card-action">
+              <%= simple_format(@tweet.text) %>
+      <div class="more">
+      <ul class="more_list">
+        <li>
+          <%= link_to '編集', "/tweets/#{@tweet.id}/edit", method: :get %>
+        </li>
+        <li>
+          <%= link_to '削除', "/tweets/#{@tweet.id}", method: :delete %>
+        </li>
+      </ul>
+    </div>
+    </div>
+          </div>
+        </div>
+      </div>
+    <% end %>
